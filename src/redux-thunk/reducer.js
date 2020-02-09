@@ -6,7 +6,7 @@ const initialState = {
     error: ''
 };
 
-export default function reduxSagaReducer(state = initialState, action) {
+export default function reduxThunkReducer(state = initialState, action) {
     switch (action.type) {
         case LOAD_USERS_LOADING: {
             return {

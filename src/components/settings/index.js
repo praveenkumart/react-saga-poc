@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { loadUsers } from "../../saga/actions";
-import {connect} from 'react-redux';
-
-
+import { connect } from 'react-redux';
+import { ScrollView } from 'react-native';
 import { Container, Header, Content, Button, Text, Left, Body, Right, Icon, Title, Form, Item, Input, Label } from 'native-base';
- class Settings extends Component {
+
+class Settings extends React.Component {
     componentDidMount() {
         this.props.loadUsers();
         console.log(this.props);
@@ -26,14 +26,15 @@ import { Container, Header, Content, Button, Text, Left, Body, Right, Icon, Titl
                     </Right>
                 </Header>
                 <Content>
-                    <Text>
-                        Settings
-                        {/* {this.props.data.map((u, i) =>
+
+                    <ScrollView>
+                        <Text>HELLO</Text>
+                        {this.props.data.map((u, i) =>
                             <Text key={i}>
                                 {u.name}
                             </Text>
-                        )} */}
-                    </Text>
+                        )}
+                    </ScrollView>
                 </Content>
             </Container>
         );
