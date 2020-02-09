@@ -12,22 +12,13 @@ export default class Login extends Component {
                         </Button>
                     </Left>
                     <Body>
-                        <Title>Header</Title>
+                        <Title>JOYRIDE</Title>
                     </Body>
                     <Right>
                     </Right>
                 </Header>
-                <Content>
-                    <Form>
-                        <Item floatingLabel>
-                            <Label>Username</Label>
-                            <Input />
-                        </Item>
-                        <Item floatingLabel last>
-                            <Label>Password</Label>
-                            <Input />
-                        </Item>
-                    </Form>
+                <Content >
+                   <Text style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}> Welcome to JOYRIDE </Text>
                 </Content>
             </Container>
         );

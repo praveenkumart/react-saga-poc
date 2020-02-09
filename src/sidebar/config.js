@@ -3,11 +3,11 @@ export default {
         'name': 'Home',
         'path':'Login'
     }, {
-        'name': 'Settings',
+        'name': 'Country list',
         'path':'Settings'
     }, {
         'name': 'Profile',
-        'path':'Login'
+        'path':'profile'
     }
     ]
 }

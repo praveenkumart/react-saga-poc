@@ -2,17 +2,17 @@
 import Api from "../api"
 
 
-export const LOAD_USERS_LOADING = 'REDUX_THUNK_LOAD_USERS_LOADING';
-export const LOAD_USERS_SUCCESS = 'REDUX_THUNK_LOAD_USERS_SUCCESS';
-export const LOAD_USERS_ERROR = 'REDUX_THUNK_LOAD_USERS_ERROR';
+export const LOAD_COUNTRY_LOADING = 'REDUX_THUNK_LOAD_COUNTRY_LOADING';
+export const LOAD_COUNTRY_SUCCESS = 'REDUX_THUNK_LOAD_COUNTRY_SUCCESS';
+export const LOAD_COUNTRY_ERROR = 'REDUX_THUNK_LOAD_COUNTRY_ERROR';
 
-export const loadUsers = () => dispatch => {
-    dispatch({ type: LOAD_USERS_LOADING });
+export const loadCountryList = () => dispatch => {
+    dispatch({ type: LOAD_COUNTRY_LOADING });
 
-    Api.getUsers()
+    Api.getCountryLists()
         .then(response => response.json())
         .then(
-            data => dispatch({ type: LOAD_USERS_SUCCESS, data }),
-            error => dispatch({ type: LOAD_USERS_ERROR, error: error.message || 'Unexpected Error!!!' })
+            data => dispatch({ type: LOAD_COUNTRY_SUCCESS, data }),
+            error => dispatch({ type: LOAD_COUNTRY_ERROR, error: error.message || 'Unexpected Error!!!' })
         )
 };

@@ -1,5 +1,5 @@
 import { put, takeEvery, takeLatest } from 'redux-saga/effects'
-import {loadUsersSuccess, LOAD_USERS_ERROR, LOAD_USERS_LOADING, LOAD_USERS_SUCCESS} from "./actions";
+import {loadCountryListSuccess, LOAD_COUNTRY_ERROR, LOAD_COUNTRY_LOADING, LOAD_COUNTRY_SUCCESS} from "./actions";
 import Api from '../api'
 
 async function fetchAsync(func) {
@@ -14,20 +14,20 @@ async function fetchAsync(func) {
 
 function* fetchUser() {
     try {
-        const users = yield fetchAsync(Api.getUsers);
+        const users = yield fetchAsync(Api.getCountryLists);
 
-        yield put({type: LOAD_USERS_SUCCESS, data: users});
+        yield put({type: LOAD_COUNTRY_SUCCESS, data: users});
     } catch (e) {
-        yield put({type: LOAD_USERS_ERROR, error: e.message});
+        yield put({type: LOAD_COUNTRY_ERROR, error: e.message});
     }
 }
 
 export function* usersSaga() {
     // Allows concurrent fetches of users
-    yield takeEvery(LOAD_USERS_LOADING, fetchUser);
+    yield takeEvery(LOAD_COUNTRY_LOADING, fetchUser);
 
     // Does not allow concurrent fetches of users
-    // yield takeLatest(LOAD_USERS_LOADING, fetchUser);
+    // yield takeLatest(LOAD_COUNTRY_LOADING, fetchUser);
 }
 
 export default usersSaga;
